@@ -1,0 +1,16 @@
+# macOS
+.DS_Store
+__MACOSX/
+
+# Windows
+Thumbs.db
+desktop.ini
+
+# Per-run inputs & outputs — consumed/produced by a run, not part of the engine
+input/*
+!input/.gitkeep
+output/*
+!output/.gitkeep
+
+# Large media — host externally (unlisted) and link from the README, don't commit
+*.mp4
