@@ -55,7 +55,7 @@ The `receipts/` folder holds an actual end-to-end run of the suite, lightly sani
 - **`what-we-changed.md`** — the frictions the run surfaced and the fixes folded back in before shipping;
 - **`audit-mode-stub-EXPERIMENTAL.md`** — a stance-flip I identified through the run: using ATP as a "step 0" to *audit and help populate* a system, rather than design within one taken as done. A candidate future feature, shipped as a worked idea — **not wired into the tool**.
 
-The **input** side of this run — the PRD this tool consumed — lives in the **Chalky receipts** (the companion tool's worked example); this tool's `input/` ships empty, ready for your own PRD.
+The **input** side of this run — the PRD this tool consumed — lives in the **[Chalky receipts](https://github.com/mirabradshaw-data/chalky-prd/tree/main/receipts/mira-run)** (the companion tool's worked example); this tool's `input/` ships empty, ready for your own PRD.
 
 ## Part of a suite
 
@@ -66,6 +66,10 @@ The Architecture Thinking Partner is the **downstream** half of a two-tool suite
 Built by **Mira Bradshaw** with assistance from Claude (Claude Code). It's the downstream half of a suite: a PRD interviewer (Chalky) draws the work out and produces the PRD; this turns that PRD into architecture. The engine is generic — only the target-system config changes — so the same reviewer serves any system you point it at.
 
 The thing I keep coming back to: a model is often the better coder these days, but the engineering and especially the architecture — what fits the system, what honours the decisions already made, what the build is really *for* — is a judgement worth keeping with the human. That judgement is heavily reliant on memory, taste, decisions, experience and, as much as we try to provide those to a model with ICM, AI is fundamentally a blank slate (tabula rasa) every time the context clears. This tool is built to *augment* the human judgement, never to replace it. And to set up the model with enough relevant context to be a thinking partner worth talking to in the architectural domain.
+
+## A note on this version
+
+After this first shipped, I shipped a new version of the upstream tool, **Chalky** — and in expanding its receipts I added a file-by-file index in table form that made the worked run much easier to navigate. It was useful enough that I brought the same `receipts/README.md` here, for consistency across the suite. That's the only change: nothing about the engine, the sample target-system, or the worked run itself has been touched.
 
 ## License
 
