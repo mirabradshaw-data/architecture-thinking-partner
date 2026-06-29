@@ -1,5 +1,9 @@
 # Architecture Thinking Partner — turn a PRD into a build
 
+> **Hand it a PRD; it designs the ICM architecture *within your system* — challenging your thinking, never overruling it.** The downstream half of a two-tool ICM suite: [Chalky](https://github.com/mirabradshaw-data/chalky-prd) `→ PRD → ATP → build spec`.
+>
+> *Proven on real work: on its first run against a live system with a 67-decision ADR it proved its teeth — surfacing a flaw the architect had missed and overturning an existing decision. ([receipts](receipts/))*
+
 The Architecture Thinking Partner takes a confirmed **PRD** and turns it into sound ICM architecture — a **build spec** a build conversation can pick up cold, that fits the system it lands in and the decisions already made. It's an ICM workspace: an interpretable engine you point at any system by swapping one config. It's the downstream half of a pair — a PRD interviewer draws the work out and stops at a PRD; this finishes what it deliberately leaves open (the flagged breakdown, the build target) and owns **draft → final**.
 
 Most architecture review either **rubber-stamps** you (nods the plan through and adds nothing) or **hijacks** you (designs over your work and makes you fight to keep what you already knew was right). This does neither: it assumes a competent architect, designs *within* the system you already have rather than from first principles, surfaces the blind spots and the contradictions with decisions you've already made — and challenges with substance while leaving every call yours.
@@ -57,6 +61,10 @@ The `receipts/` folder holds an actual end-to-end run of the suite, lightly sani
 
 The **input** side of this run — the PRD this tool consumed — lives in the **[Chalky receipts](https://github.com/mirabradshaw-data/chalky-prd/tree/main/receipts/mira-run)** (the companion tool's worked example); this tool's `input/` ships empty, ready for your own PRD.
 
+**Beyond the shipped example.** The worked run above used the generic ICM baseline. Since then, ATP has had its **first full run against my complete live system** — the real thing, with a tabular ADR 67 decisions deep. It did exactly what it was built to do: it **proved its teeth**. It didn't nod the architecture through — it surfaced a real flaw in an existing decision, where I (the architect) had conflated two things that could be cleanly partitioned, and that decision was overturned and reshaped on the spot.
+
+The specifics, for the curious: my cross-system principles — the architecture and rules both my systems inherit — were, before this run, promoted to the cross-system layer only when *applicable* to both, to keep context lean and omitted if irrelevant. ATP showed they could be promoted without being *activated*: present for every build-time activity, but sliced out of runtime context by the system's existing structure — so promoting them cost nothing at runtime, and they were already there for all build-time work. A strict improvement, and I adjusted the register immediately, on its first real run. Teeth proven; headline claim met.
+
 ## Part of a suite
 
 The Architecture Thinking Partner is the **downstream** half of a two-tool suite. It consumes a PRD; its upstream companion, **[Chalky](https://github.com/mirabradshaw-data/chalky-prd)**, draws the work out of the person and produces that PRD. Run Chalky first, then hand its PRD here — the seam is the PRD, picked up cold without re-asking what the work is.
@@ -69,7 +77,7 @@ The thing I keep coming back to: a model is often the better coder these days, b
 
 ## A note on this version
 
-After this first shipped, I shipped a new version of the upstream tool, **Chalky** — and in expanding its receipts I added a file-by-file index in table form that made the worked run much easier to navigate. It was useful enough that I brought the same `receipts/README.md` here, for consistency across the suite. That's the only change: nothing about the engine, the sample target-system, or the worked run itself has been touched.
+Everything around the tool has moved; the tool has not. In step with a new version of the upstream **Chalky**, I brought its table-format `receipts/README.md` here for suite consistency, added a top-of-page hook, and recorded ATP's first full run against my real live system (see "Beyond the shipped example" above). Before the final push I also had a model red-team ATP's own claims — that its declines fire, and that it stays honest about its domain rather than force-fitting non-ICM problems. They held ([`receipts/red-team.md`](receipts/red-team.md)). As with Chalky: proving the claims means you don't touch the thing you're proving — so the engine, the sample target-system, and the worked run are all exactly as they shipped (the commit history shows it either way).
 
 ## License
 

@@ -13,3 +13,11 @@ The **input** side of this run — the PRD this tool consumed — lives in the [
 | `owner-account.md` | Meta | Mira | My architect's-eye account from the gates — the human counterpart to the model assessment. |
 | `what-we-changed.md` | Meta | Mira | The frictions the run surfaced and the fixes folded back in before shipping. |
 | `audit-mode-stub-EXPERIMENTAL.md` | Meta | Mira | A stance-flip I spotted through the run — using ATP as a "step 0" to audit and help populate a system, not just design within one. A worked idea, **not wired into the tool**. |
+
+## Red-team — proving the claims
+
+Commissioned before shipping: a model-run adversarial test of ATP's guardrails and domain honesty. The full results were reviewed inline; the summary lives in the file below.
+
+| File | Type | Written by | What it is |
+|------|------|------------|------------|
+| `red-team.md` | Meta | Model | Adversarial test — all 6 hard/soft declines fired cleanly, and ATP correctly refused two non-ICM problems (a coffee-shop layout and an e-commerce backend) rather than force-fitting. |
